@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Login text="כניסה"/>
+  <Login text="כניסה" @getAllShifts="getAllShifts()"/>
   <Menu/>
 </div>
 </template>
@@ -19,10 +19,15 @@ export default {
     },
    methods:{
         getAllShifts() {
+             console.log("helo")
             getAllShifts().then(response => {
-                console.log(response)
+            console.log(response)
             })
+           
         },
+        mounted () {
+            this.getAllUsers();
+  }
     }
 }
 </script>

@@ -10,6 +10,6 @@ export async function shiftStatus(data) {
 }
 
 export async function getAllShifts() {
-    const response = await fetch('`api/getTable');
+    const response = await fetch('http://localhost:3000/getTable');
     return await response.json();
 }
