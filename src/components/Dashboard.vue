@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Login text="כניסה" @getAllShifts="getAllShifts()"/>
+  <Login text="כניסה" @getAllShifts="getAllShifts()" @shiftStatus="shiftStatus($event)" />
   <Menu/>
 </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import Login from './Login.vue'
 import Menu from './Menu.vue'
-import { getAllShifts } from '../services/ShiftService'
+import { shiftStatus,getAllShifts } from '../services/ShiftService'
 
 export default {
    name: 'Dashboard',
@@ -18,16 +18,21 @@ export default {
     Menu
     },
    methods:{
+        shiftStatus(data) {
+            console.log('data:::', data)
+            shiftStatus(data).then(response => {
+            console.log(response);
+            });
+         },
         getAllShifts() {
-             console.log("helo")
             getAllShifts().then(response => {
             console.log(response)
-            })
+            });
            
         },
         mounted () {
             this.getAllUsers();
-  }
+        }
     }
 }
 </script>
