@@ -3,8 +3,7 @@
     <div class="col-1">
             <input type="text" v-model="message" placeholder="הכנס תעודת זהות"/>
     </div> 
-    <button @click='getAllShifts()' type="button"> משמרות </button> 
-    <h1>{{message}} </h1>
+    <button v-if="message.length == 9" @click='getAllShifts()' type="button"> הצג משמרות</button> 
    <Shifts v-if="shifts.length > 0" :shifts="shifts" />
   </div>
 </template>
@@ -31,10 +30,6 @@ export default {
             this.shifts = response  
             console.log(this.shifts)
             });
-           
-        },
-        mounted () {
-            this.getAllUsers();
         }
     }
 }

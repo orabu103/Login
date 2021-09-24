@@ -17,3 +17,14 @@ export async function getAllShifts(data) {
       })
       return await response.json();
 }
+
+export async function lastShiftStatus(data) {
+
+  const response = await fetch('http://localhost:3000/lastShift', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({id: data})
+    })
+  return await response.json();
+    
+}
