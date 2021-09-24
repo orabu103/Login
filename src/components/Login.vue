@@ -2,14 +2,12 @@
     <div class="container">
         <div class="row justify-content-center">
                 <div class="col-1">
-                     <button @click='getAllShifts()' type="button"> {{text}} </button>
-                </div>
-                <div class="col-1">
-                     <button @click='shiftStatus()' type="button"> test </button>
-                </div>
-                <div class="col-1">
                     <input type="text" v-model="message" placeholder="הכנס תעודת זהות"/>
-                </div>  
+                </div>
+                <div class="col-1">
+                     <button @click='shiftStatus()' type="button"> {{text}} </button>
+                </div>
+                  
         </div>
     </div>
 </template>

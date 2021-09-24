@@ -1,10 +1,10 @@
 <template>
     <div class="container">
         <h2>Shifts</h2>
-        <table class="table table-bordered">
+        <table class="table">
             <thead>
                 <tr>
-                    <th>User Id</th>
+                    <th>תעודת זהות</th>
                     <th>תאריך</th>
                     <th>יום בשבוע</th>
                     <th>סטאטוס</th>
@@ -15,8 +15,8 @@
             <tbody>
                 <tr v-for="item in shifts" :key="item.updateTime">
                     <td>{{ item.ID }}</td>
-                    <td>{{ getDate(item.updateTime)}}</td>
-                    <td>{{ getDay(item.updateTime)}}</td>
+                    <td>{{getDate(item.updateTime)}}</td>
+                    <td>{{ days[getDay(item.updateTime)]}}</td>
                     <td v-if="item.Status > 0" >כניסה</td>
                     <td v-else >יציאה</td>
                     <td>{{ getTime(item.updateTime)}}</td>
@@ -31,6 +31,11 @@
     export default {
         name: 'Shift',
         props: ['shifts'],
+        data(){
+            return{
+             days:["ראשון", "שני", "שלישי", "רביעי" ,"חמישי", "שישי", "שבת"]
+            }
+        },
         methods:{
             getTime(date){
                 var _date = new Date(date);
