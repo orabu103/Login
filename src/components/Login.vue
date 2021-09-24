@@ -28,7 +28,7 @@ export default{
     },
     methods:{
        getAllShifts() {
-          this.$emit('getAllShifts')
+          this.$emit('getAllShifts' , this.message)
        },
        shiftStatus() {
           console.log("ok")

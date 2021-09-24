@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Login text="כניסה" @getAllShifts="getAllShifts()" @shiftStatus="shiftStatus($event)" />
+  <Login text="כניסה" @getAllShifts="getAllShifts($event)" @shiftStatus="shiftStatus($event)" />
   <Menu/>
   <Shift v-if="shifts.length > 0" :shifts="shifts" />
 </div>
@@ -33,11 +33,11 @@ export default {
             console.log(response);
             });
          },
-        getAllShifts() {
-            getAllShifts().then(response => {
+        getAllShifts(id) {
+            getAllShifts(id).then(response => {
+            console.log(id)
             this.shifts = response  
-            console.log(this.shifts);
-            console.log(response)
+            console.log(this.shifts)
             });
            
         },
