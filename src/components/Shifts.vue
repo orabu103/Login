@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <h2>Shifts</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -8,7 +7,7 @@
                     <th>תאריך</th>
                     <th>יום בשבוע</th>
                     <th>סטאטוס</th>
-                    <th>זמן</th>
+                    <th>שעה</th>
                  
                 </tr>
             </thead>
@@ -39,7 +38,8 @@
         methods:{
             getTime(date){
                 var _date = new Date(date);
-                return _date.getHours() + ":" + _date.getMinutes();
+                console.log(_date.getMinutes());
+                return (_date.getHours()<10?'0':'') +_date.getHours() + ":" + (_date.getMinutes()<10?'0':'') + _date.getMinutes();
             },
              getDate(date){
                 var _date = new Date(date);
@@ -54,3 +54,21 @@
     }
         
 </script>
+
+<style scoped>
+table {
+
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color: rgb(114, 114, 114);}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>

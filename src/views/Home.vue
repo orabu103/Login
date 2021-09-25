@@ -1,7 +1,6 @@
 <template>
 <div>
   <Login @shiftStatus="shiftStatus($event)" />
- 
 </div>
 </template>
 
@@ -15,7 +14,8 @@ import { shiftStatus } from '../services/ShiftService'
 export default {
    name: 'Home',
    components: {
-    Login
+    Login,
+ 
     },data() {
       return {
           text:''

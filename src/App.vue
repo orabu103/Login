@@ -1,9 +1,11 @@
 <template>
+<div class="app">
   <div id="nav">
     <router-link to="/">כניסה למשמרת</router-link> |
     <router-link to="/shift">המשמרות שלי</router-link>
   </div>
   <router-view/>
+</div>
 </template>
 
 <style>
@@ -21,10 +23,10 @@
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #98999b;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #0f0f0f;
 }
 </style>
