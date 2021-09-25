@@ -2,7 +2,7 @@
 <div class="container">
   <div class="form">
     <div class="input-id">
-          <input type="text" v-model="message" placeholder="הכנס תעודת זהות" maxlength="9" dir="rtl"/>
+      <input type="text" v-model="message" placeholder="הכנס תעודת זהות" maxlength="9" dir="rtl"/>
     </div> 
     <div>    
       <button v-if="message.length == 9" @click='getAllShifts()' type="button"> הצג משמרות</button>  
@@ -59,8 +59,8 @@ button{
     transition-duration: 0.4s;
     cursor: pointer;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius:10px;
 }
-
 .container{
   
   width: 100vw;

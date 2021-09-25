@@ -5,10 +5,9 @@
                 <tr>
                     <th>תעודת זהות</th>
                     <th>תאריך</th>
-                    <th>יום בשבוע</th>
-                    <th>סטאטוס</th>
+                    <th>יום</th>
+                    <th>סטטוס</th>
                     <th>שעה</th>
-                 
                 </tr>
             </thead>
             <tbody>
@@ -19,14 +18,14 @@
                     <td v-if="item.Status > 0" >כניסה</td>
                     <td v-else >יציאה</td>
                     <td>{{ getTime(item.updateTime)}}</td>
-              </tr>
+                </tr>
             </tbody>
         </table>
     </div>
 </template>
 
-<script>
 
+<script>
     export default {
         name: 'Shift',
         props: ['shifts'],
@@ -49,15 +48,12 @@
                 var _date = new Date(date);
                 return _date.getDay();
             }
-       
         }
-    }
-        
+    }  
 </script>
 
 <style scoped>
 table {
-
   border-collapse: collapse;
   width: 50%;
 }
@@ -67,8 +63,6 @@ th, td {
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-
-tr:hover {background-color: rgb(114, 114, 114);}
 
 tr:nth-child(even) {background-color: #f2f2f2;}
 </style>
